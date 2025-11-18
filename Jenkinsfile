@@ -10,19 +10,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker build -t myapp .'
+                bat 'docker build -t myapp .'
             }
         }
 
         stage('Run') {
             steps {
-                sh 'docker run -d -p 5000:5000 myapp'
+                bat 'docker run -d -p 5000:5000 myapp'
             }
         }
 
         stage('Tests') {
             steps {
-                sh 'echo "Running Smoke Tests..."'
+                bat 'echo "Running Smoke Tests..."'
             }
         }
     }
